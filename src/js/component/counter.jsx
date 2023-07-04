@@ -5,27 +5,31 @@ const Counter = () => {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            console.log("Why does it break?");
             setCount(count + 1);
         }, 1000);
         return () => clearInterval(interval);
     })
+
+    const numDivBootstrap = "col ms-2 p-2 border-start border-end border-3 border-dark rounded bg-dark bg-opacity-50";
 
     const sixDigits = (n) => {
         let arr = n.toString().split('');
         while (arr.length < 6) arr.unshift('0');
         return arr.map((n)=> {
             return (
-                <div className='ms-2 px-2 border-start border-end border-3 border-secondary rounded bg-dark'>
-                    <h1 className='text-light px-1'>{n}</h1>
+                <div className={numDivBootstrap} >
+                    <h1 className='text-white m-0 mb-1'>{n}</h1>
                 </div>
             );
         });
     }
     
     return (
-        <div className='mt-5'>
-            <div className='d-flex flex-row justify-content-center mb-3'>{sixDigits(count)}</div>
+        <div className='d-flex flex-row justify-content-center py-2 px-5 bg-black'>
+            <div className={numDivBootstrap + " d-flex justify-content-center align-items-center"}>
+                <i className="fa-solid fa-stopwatch text-white display-6"></i>
+            </div>
+            {sixDigits(count)}
         </div>
     )
 }
