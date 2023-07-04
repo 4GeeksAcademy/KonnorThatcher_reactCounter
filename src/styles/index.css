@@ -1,4 +1,8 @@
 html {
     background-color: #111;
-    font-size: 1.6rem;
+}
+
+h1 {
+    font-family: 'Orbitron';
+    font-size: 2.6em;
 }

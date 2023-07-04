@@ -10,7 +10,7 @@ const Counter = () => {
         return () => clearInterval(interval);
     })
 
-    const numDivBootstrap = "col ms-2 p-2 border-start border-end border-3 border-dark rounded bg-dark bg-opacity-50";
+    const numDivBootstrap = "col ms-2 py-4 border-start border-end border-3 border-dark rounded bg-dark bg-opacity-50";
 
     const sixDigits = (n) => {
         let arr = n.toString().split('');
@@ -18,19 +18,19 @@ const Counter = () => {
         return arr.map((n)=> {
             return (
                 <div className={numDivBootstrap} >
-                    <h1 className='text-white m-0 mb-1'>{n}</h1>
+                    <h1 className='text-white m-0'>{n}</h1>
                 </div>
             );
         });
     }
     
     return (
-        <div className='d-flex flex-row justify-content-center py-2 px-5 bg-black'>
-            <div className={numDivBootstrap + " d-flex justify-content-center align-items-center"}>
+        <>
+            <div className={`${numDivBootstrap} d-flex justify-content-center align-items-center`}>
                 <i className="fa-solid fa-stopwatch text-white display-6"></i>
             </div>
             {sixDigits(count)}
-        </div>
+        </>
     )
 }
 
