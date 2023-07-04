@@ -19,7 +19,7 @@ const Counter = () => {
     return (
         <div>
             <p>{count}</p>
-            <button onClick={plusOne}>Click me you fuckin idiot!</button>
+            <button onClick={plusOne}>Click me you goofy idiot!</button>
         </div>
     )
 }
